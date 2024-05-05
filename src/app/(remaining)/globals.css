@@ -80,7 +80,7 @@
     @apply bg-transparent border border-slate-500/30 dark:border-gray-50/10 backdrop-blur-xl rounded shadow  hover:bg-slate-100  dark:hover:bg-black/60 dark:hover:text-white px-5 py-2 text-sm;
   }
   .searchBox {
-    @apply hidden lg:flex items-center border dark:border-slate-50/10 bg-slate-100/30 dark:bg-slate-950/50 backdrop-blur-xl rounded shadow px-3;
+    @apply hidden sm:flex items-center border dark:border-slate-50/10 bg-slate-100/30 dark:bg-slate-950/50 backdrop-blur-xl rounded shadow px-3;
   }
   .searchInput {
     @apply bg-transparent border-none focus:border-none focus:ring-0  focus:outline-none placeholder:text-slate-500 dark:placeholder:text-slate-400;
