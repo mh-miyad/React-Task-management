@@ -1,13 +1,13 @@
 import { create } from "zustand";
 
-const useStore = create((set) => ({
+const menuStore = create((set) => ({
   //  Add Here State
   menubarOpen: false,
   user: [],
   //   State End Here
   //! Add Here Function
-  openMenu: () => set((state) => ({ openMenu: !state.menubarOpen })),
+  openMenu: () => set((state) => ({ menubarOpen: !state.menubarOpen })),
   //!  Function End Here
 }));
 
-export default useStore;
+export default menuStore;

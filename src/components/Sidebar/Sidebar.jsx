@@ -1,10 +1,11 @@
 "use client";
-import useStore from "@/Provider/Zustand/Store";
+
+import menuStore from "@/Provider/Zustand/Store";
 import React from "react";
 import { CgMonday } from "react-icons/cg";
 
 const SidebarComp = () => {
-  const menubarOpen = useStore((state) => state.menubarOpen);
+  const { menubarOpen } = menuStore();
   console.log(menubarOpen);
   return (
     <div className=" h-screen sm:min-w-[100px] max-w-2xl mx-auto px-10 py-5 bg-red-400">
