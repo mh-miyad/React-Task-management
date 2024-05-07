@@ -1,7 +1,8 @@
 import { Roboto } from "next/font/google";
 import "./globals.css";
 import NextThemeProvider from "@/components/Theme/ThemeProvider";
-import Layout from "@/Layout/Layout";
+import SidebarComp from "@/components/Sidebar/Sidebar";
+import NavComp from "@/components/Navbar/NavComp";
 const inter = Roboto({
   subsets: ["latin"],
   weight: ["100", "300", "500", "700", "900"],
@@ -22,7 +23,26 @@ export default function RootLayout({ children }) {
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange>
-          <Layout>{children}</Layout>
+          <div className="flex items-start">
+            {/* Side bar or Navigation */}
+            <div className="flex-grow">
+              {" "}
+              <SidebarComp />
+            </div>
+            {/* Side bar or Navigation */}
+            {/* main Children or Page  */}
+            <main className="flex-grow">
+              <div>
+                <NavComp />
+              </div>
+              <div>
+                {/* Main Content  */}
+                {children}
+                {/* Main Content  */}
+              </div>
+            </main>
+            {/* main Children or Page  */}
+          </div>
         </NextThemeProvider>
       </body>
     </html>
