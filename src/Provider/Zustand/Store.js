@@ -7,6 +7,7 @@ const menuStore = create((set) => ({
   //   State End Here
   //! Add Here Function
   openMenu: () => set((state) => ({ menubarOpen: !state.menubarOpen })),
+  closeMenu: () => set((state) => ({ menubarOpen: (state = false) })),
   //!  Function End Here
 }));
 

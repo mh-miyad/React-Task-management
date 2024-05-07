@@ -8,14 +8,11 @@ import menuStore from "@/Provider/Zustand/Store";
 
 const NavComp = () => {
   const { openMenu } = menuStore();
-  const handleClick = () => {
-    openMenu();
-  };
   return (
     <nav className="py-2 border-b border-b-slate-200 dark:border-b-slate-800 mb-5">
       <div className="flex justify-between items-center py-2 px-3 bg-white dark:bg-slate-800/5  backdrop-blur-sm max-w-7xl mx-auto">
         <div>
-          <button onClick={handleClick}>
+          <button onClick={openMenu}>
             {" "}
             <IoMenu className="size-10 text-slate-900 dark:text-white mx-auto" />
           </button>
