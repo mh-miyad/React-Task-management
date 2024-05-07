@@ -16,7 +16,7 @@ const Layout = ({ children }) => {
         <div>
           <NavComp />
         </div>
-        <div className="mx-10">
+        <div>
           {/* Main Content  */}
           {children}
           {/* Main Content  */}

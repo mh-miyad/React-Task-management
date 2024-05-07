@@ -1,18 +1,26 @@
 "use client";
 
 import menuStore from "@/Provider/Zustand/Store";
-import { FcPositiveDynamic } from "react-icons/fc";
+import {
+  FcPositiveDynamic,
+  FcConferenceCall,
+  FcPaid,
+  FcParallelTasks,
+} from "react-icons/fc";
 import Link from "next/link";
 import React from "react";
 import { CgMonday } from "react-icons/cg";
 import AvatarImg from "../../Assets/avatr.jpg";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 const SidebarComp = () => {
   const { menubarOpen } = menuStore();
+  const pathname = usePathname();
 
   return (
     <div
-      className={` h-screen  mx-auto px-7 py-5 bg-gray-50 border-r  dark:bg-slate-900 overflow-y-auto  ${
+      className={` h-screen  mx-auto px-7 py-5 bg-gray-50/20 border-r  dark:bg-slate-900 overflow-y-auto  ${
         menubarOpen ? "w-[300px]" : "w-[90px]"
       } transition-all ease-linear duration-300`}>
       {/* Sidebar or Navigation */}
@@ -56,19 +64,105 @@ const SidebarComp = () => {
         {/* Navigation  */}
 
         <ul className="mt-10 space-y-2">
-          <li
-            className={` rounded-md flex  items-center gap-2 cursor-pointer   ${
-              menubarOpen
-                ? "px-5 py-1  dark:bg-cyan-400/20 border  dark:border-slate-500 hover:bg-gray-200 hover:dark:bg-slate-800"
-                : ""
-            }`}>
-            <FcPositiveDynamic className={` size-10`} />
-            <h2
-              className={`text-sm font-medium text-gray-600 dark:text-slate-400 capitalize ${
-                menubarOpen ? "block" : "hidden"
+          <li>
+            <Link
+              href={"/"}
+              className={` rounded-md flex  items-center gap-2 cursor-pointer    ${
+                pathname === "/"
+                  ? "bg-cyan-200/20 dark:bg-cyan-400/20 border-2 border-cyan-400/20 dark:border-teal-500/30 hover:bg-cyan-300/30 hover:dark:bg-cyan-500/20 "
+                  : " dark:bg-transparent hover:bg-gray-200 hover:dark:bg-slate-800 "
+              } ${
+                menubarOpen
+                  ? "py-1 px-5 dark:bg-cyan-400/20 border  dark:border-slate-500 hover:bg-gray-200 hover:dark:bg-slate-800 "
+                  : ""
               }`}>
-              Dashboard
-            </h2>
+              <FcPositiveDynamic className={` size-10`} />
+              <h2
+                className={`text-sm font-medium  capitalize ${
+                  menubarOpen ? "block" : "hidden"
+                } ${
+                  pathname === "/"
+                    ? "text-cyan-600 dark:text-cyan-300"
+                    : "text-gray-600 dark:text-slate-400"
+                }`}>
+                Dashboard
+              </h2>
+            </Link>
+          </li>
+          <li>
+            <Link
+              href={"/user"}
+              className={` rounded-md flex  items-center gap-2 cursor-pointer    ${
+                pathname === "/user"
+                  ? "bg-cyan-200/20 dark:bg-cyan-400/20 border-2 border-cyan-400/20 dark:border-teal-500/30 hover:bg-cyan-300/30 hover:dark:bg-cyan-500/20 px-5 py-1  "
+                  : " dark:bg-transparent hover:bg-gray-200 hover:dark:bg-slate-800 "
+              } ${
+                menubarOpen
+                  ? "py-1 px-5 dark:bg-cyan-400/20 border  dark:border-slate-500 hover:bg-gray-200 hover:dark:bg-slate-800 "
+                  : ""
+              }`}>
+              <FcConferenceCall className={` size-10`} />
+              <h2
+                className={`text-sm font-medium  capitalize ${
+                  menubarOpen ? "block" : "hidden"
+                } ${
+                  pathname === "/user"
+                    ? "text-cyan-600 dark:text-cyan-300"
+                    : "text-gray-600 dark:text-slate-400"
+                }`}>
+                User
+              </h2>
+            </Link>
+          </li>
+          <li>
+            <Link
+              href={"/product"}
+              className={` rounded-md flex  items-center gap-2 cursor-pointer    ${
+                pathname === "/product"
+                  ? "bg-cyan-200/20 dark:bg-cyan-400/20 border-2 border-cyan-400/20 dark:border-teal-500/30 hover:bg-cyan-300/30 hover:dark:bg-cyan-500/20 px-5 py-1  "
+                  : " dark:bg-transparent hover:bg-gray-200 hover:dark:bg-slate-800 "
+              } ${
+                menubarOpen
+                  ? "py-1 px-5 dark:bg-cyan-400/20 border  dark:border-slate-500 hover:bg-gray-200 hover:dark:bg-slate-800 "
+                  : ""
+              }`}>
+              <FcPaid className={` size-10`} />
+              <h2
+                className={`text-sm font-medium  capitalize ${
+                  menubarOpen ? "block" : "hidden"
+                } ${
+                  pathname === "/product"
+                    ? "text-cyan-600 dark:text-cyan-300"
+                    : "text-gray-600 dark:text-slate-400"
+                }`}>
+                Product
+              </h2>
+            </Link>
+          </li>
+          <li>
+            <Link
+              href={"/task"}
+              className={` rounded-md flex  items-center gap-2 cursor-pointer    ${
+                pathname === "/task"
+                  ? "bg-cyan-200/20 dark:bg-cyan-400/20 border-2 border-cyan-400/20 dark:border-teal-500/30 hover:bg-cyan-300/30 hover:dark:bg-cyan-500/20 px-5 py-1  "
+                  : " dark:bg-transparent hover:bg-gray-200 hover:dark:bg-slate-800 "
+              } ${
+                menubarOpen
+                  ? "py-1 px-5 dark:bg-cyan-400/20 border  dark:border-slate-500 hover:bg-gray-200 hover:dark:bg-slate-800 "
+                  : ""
+              }`}>
+              <FcParallelTasks className={` size-10`} />
+              <h2
+                className={`text-sm font-medium  capitalize ${
+                  menubarOpen ? "block" : "hidden"
+                } ${
+                  pathname === "/task"
+                    ? "text-cyan-600 dark:text-cyan-300"
+                    : "text-gray-600 dark:text-slate-400"
+                }`}>
+                Task Management
+              </h2>
+            </Link>
           </li>
         </ul>
 
