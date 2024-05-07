@@ -1,5 +1,4 @@
 "use client";
-
 import menuStore from "@/Provider/Zustand/Store";
 import {
   FcPositiveDynamic,
@@ -8,23 +7,26 @@ import {
   FcParallelTasks,
 } from "react-icons/fc";
 import Link from "next/link";
-import { useState } from "react";
+
 import { CgMonday } from "react-icons/cg";
 import AvatarImg from "../../Assets/avatr.jpg";
 import Image from "next/image";
-import { Button, Drawer } from "flowbite-react";
+import { Drawer } from "flowbite-react";
 import { usePathname } from "next/navigation";
 
+
 const SidebarComp = () => {
-  const { menubarOpen, closeMenu } = menuStore();
+
+  const { menubarOpen, closeMenu, openMenu } = menuStore();
   const pathname = usePathname();
+ 
 
   return (
     <>
       <div
-        className={` hidden md:block h-screen  mx-auto px-7 py-5 bg-gray-50/20 border-r  dark:bg-slate-900 overflow-y-auto  ${
-          menubarOpen ? "w-[300px]" : "w-[90px]"
-        } transition-all ease-linear duration-300`}>
+        className={`flex-grow hidden md:block h-screen min-w-[100px]  px-7 py-5 bg-gray-50/20 border-r   dark:bg-slate-900 overflow-y-auto  ${
+          menubarOpen ? "w-[300px]" : "w-[80px]"
+        } transition-all ease-linear duration-300 `}>
         {/* Sidebar or Navigation */}
         <div>
           {/* logo */}

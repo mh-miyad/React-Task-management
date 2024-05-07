@@ -1,6 +1,6 @@
 import { create } from "zustand";
-
 const menuStore = create((set) => ({
+
   //  Add Here State
   menubarOpen: false,
   user: [],

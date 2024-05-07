@@ -25,7 +25,7 @@ export default function RootLayout({ children }) {
           disableTransitionOnChange>
           <div className="flex items-start">
             {/* Side bar or Navigation */}
-            <div className="flex-grow">
+            <div>
               {" "}
               <SidebarComp />
             </div>
