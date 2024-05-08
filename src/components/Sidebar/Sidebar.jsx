@@ -14,12 +14,9 @@ import Image from "next/image";
 import { Drawer } from "flowbite-react";
 import { usePathname } from "next/navigation";
 
-
 const SidebarComp = () => {
-
   const { menubarOpen, closeMenu, openMenu } = menuStore();
   const pathname = usePathname();
- 
 
   return (
     <>
@@ -100,7 +97,7 @@ const SidebarComp = () => {
                 href={"/user"}
                 className={` rounded-md flex  items-center gap-2 cursor-pointer    ${
                   pathname === "/user"
-                    ? "bg-cyan-200/20 dark:bg-cyan-400/20 border-2 border-cyan-400/20 dark:border-teal-500/30 hover:bg-cyan-300/30 hover:dark:bg-cyan-500/20 px-5 py-1  "
+                    ? "bg-cyan-200/20 dark:bg-cyan-400/20 border-2 border-cyan-400/20 dark:border-teal-500/30 hover:bg-cyan-300/30 hover:dark:bg-cyan-500/20  "
                     : " dark:bg-transparent hover:bg-gray-200 hover:dark:bg-slate-800 "
                 } ${
                   menubarOpen
@@ -125,8 +122,8 @@ const SidebarComp = () => {
                 href={"/product"}
                 className={` rounded-md flex  items-center gap-2 cursor-pointer    ${
                   pathname === "/product"
-                    ? "bg-cyan-200/20 dark:bg-cyan-400/20 border-2 border-cyan-400/20 dark:border-teal-500/30 hover:bg-cyan-300/30 hover:dark:bg-cyan-500/20 px-5 py-1  "
-                    : " dark:bg-transparent hover:bg-gray-200 hover:dark:bg-slate-800 "
+                    ? "bg-cyan-200/20 dark:bg-cyan-400/20 border-2 border-cyan-400/20 dark:border-teal-500/30 hover:bg-cyan-300/30 hover:dark:bg-cyan-500/20  "
+                    : " dark:bg-transparent hover:bg-gray-200 hover:dark:bg-slate-800  "
                 } ${
                   menubarOpen
                     ? "py-1 px-5 dark:bg-cyan-400/20 border  dark:border-slate-500 hover:bg-gray-200 hover:dark:bg-slate-800 "
@@ -150,7 +147,7 @@ const SidebarComp = () => {
                 href={"/task"}
                 className={` rounded-md flex  items-center gap-2 cursor-pointer    ${
                   pathname === "/task"
-                    ? "bg-cyan-200/20 dark:bg-cyan-400/20 border-2 border-cyan-400/20 dark:border-teal-500/30 hover:bg-cyan-300/30 hover:dark:bg-cyan-500/20 px-5 py-1  "
+                    ? "bg-cyan-200/20 dark:bg-cyan-400/20 border-2 border-cyan-400/20 dark:border-teal-500/30 hover:bg-cyan-300/30 hover:dark:bg-cyan-500/20  "
                     : " dark:bg-transparent hover:bg-gray-200 hover:dark:bg-slate-800 "
                 } ${
                   menubarOpen
