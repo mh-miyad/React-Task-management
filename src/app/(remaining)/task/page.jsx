@@ -1,12 +1,12 @@
-import React from 'react';
+import TaskCard from "@/components/Tasks/TaskCard";
+import React from "react";
 
-const  TaskPage= () => {
-    return (
-        <div>
-            hello 
-            
-        </div>
-    );
+const TaskPage = () => {
+  return (
+    <div>
+      <TaskCard />
+    </div>
+  );
 };
 
 export default TaskPage;
