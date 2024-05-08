@@ -6,7 +6,7 @@ const TaskPage = () => {
   return (
     <div>
       <TaskBar />
-      <TaskCard />
+      {/* <TaskCard /> */}
     </div>
   );
 };
