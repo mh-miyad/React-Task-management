@@ -51,17 +51,17 @@ const TaskCard = () => {
         <CardFooter className="flex justify-between items-center">
           <div className="flex items-center  ">
             <Avatar
-              className={`-ml-4 size-9 cursor-pointer hover:scale-110 transition-all duration-100 ease-linear`}>
+              className={`-ml-2.5  dark:ring-white size-8 cursor-pointer hover:scale-110 transition-all duration-100 ease-linear`}>
               <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
               <AvatarFallback>CN</AvatarFallback>
             </Avatar>
             <Avatar
-              className={`-ml-4 size-9 cursor-pointer hover:scale-110 transition-all duration-100 ease-linear`}>
+              className={`-ml-2.5  dark:ring-white size-8 cursor-pointer hover:scale-110 transition-all duration-100 ease-linear`}>
               <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
               <AvatarFallback>CN</AvatarFallback>
             </Avatar>
             <Avatar
-              className={`-ml-4 size-9 cursor-pointer hover:scale-110 transition-all duration-100 ease-linear`}>
+              className={`-ml-2.5  dark:ring-white size-8 cursor-pointer hover:scale-110 transition-all duration-100 ease-linear`}>
               <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
               <AvatarFallback>CN</AvatarFallback>
             </Avatar>
