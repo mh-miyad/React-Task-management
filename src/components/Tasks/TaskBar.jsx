@@ -9,7 +9,8 @@ const TaskBar = ({ title }) => {
   const { isOpen } = menuStore();
   return (
     <>
-      <div className="bg-white/5 backdrop-blur-lg dark:bg-transparent dark:backdrop-blur-md border p-4 border-indigo-600/30 rounded-lg mx-auto w-full max-w-[20rem] 2xl:max-w-sm mt-4">
+      <div
+        className={`bg-white/5 backdrop-blur-lg dark:bg-transparent dark:backdrop-blur-md border p-4 border-indigo-600/30 rounded-lg  mx-auto w-full  sm:max-w-xs 2xl:max-w-sm mt-4`}>
         <div className="flex justify-between">
           <h3 className="text-lg font-bold text-neutral-600 capitalize dark:text-white">
             {" "}
