@@ -11,7 +11,8 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { GoArrowRight } from "react-icons/go";
-const TaskCard = () => {
+
+const TaskCard = ({ title, description }) => {
   const [badgeTitle, setBadgeTitle] = useState("Research");
   return (
     <div className=" sm:max-w-xs 2xl:max-w-sm w-full mx-auto">
@@ -36,10 +37,10 @@ const TaskCard = () => {
           </Badge>
 
           <CardTitle className="text-xl my-3 font-normal text-gray-600 dark:text-sky-100">
-            Copywriting Content
+            {title}
           </CardTitle>
           <CardDescription className="text-sm capitalize truncate dark:text-sky-100">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi
+            {description}
           </CardDescription>
         </CardHeader>
         <CardContent>

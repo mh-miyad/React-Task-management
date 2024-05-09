@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 
 import { Button } from "@/components/ui/button";
 import { Select } from "flowbite-react";
+import axios from "axios";
 
 const TaskCreatePage = () => {
   const {
@@ -16,8 +17,15 @@ const TaskCreatePage = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = async (data) => {
+    await axios
+      .post("http://localhost:3000/api/addtask", data)
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
     reset();
   };
 

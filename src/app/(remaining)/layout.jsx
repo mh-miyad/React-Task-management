@@ -3,6 +3,7 @@ import "./globals.css";
 import NextThemeProvider from "@/components/Theme/ThemeProvider";
 import SidebarComp from "@/components/Sidebar/Sidebar";
 import NavComp from "@/components/Navbar/NavComp";
+import TanStackQuery from "@/Provider/ReactQuery/TranstackQuery";
 const inter = Roboto({
   subsets: ["latin"],
   weight: ["100", "300", "500", "700", "900"],
@@ -37,7 +38,7 @@ export default function RootLayout({ children }) {
               </div>
               <div>
                 {/* Main Content  */}
-                {children}
+                <TanStackQuery>{children}</TanStackQuery>
                 {/* Main Content  */}
               </div>
             </main>
