@@ -1,4 +1,5 @@
 import { create } from "zustand";
+
 const menuStore = create((set) => ({
   //  Add Here State
   menubarOpen: false,
@@ -7,8 +8,7 @@ const menuStore = create((set) => ({
   backlog: [],
   onGoing: [],
   done: [],
-  needToDo:[],
-  
+  needToDo: [],
 
   //   State End Here
   //! Add Here Function
@@ -22,3 +22,5 @@ const menuStore = create((set) => ({
 }));
 
 export default menuStore;
+
+
