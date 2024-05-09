@@ -52,11 +52,32 @@ const TaskCreatePage = () => {
             />
           </div>
           <div className="my-3 ">
-            <Select id="countries" {...register("status")}>
+            <Label htmlFor="StatusOfTask" className={`text-xl`}>
+              Status
+            </Label>
+            <Select
+              id="StatusOfTask"
+              {...register("status")}
+              color={``}
+              className="my-2 dark:bg-slate-900 ">
               <option value={"pending"}>Pending</option>
               <option value={"onGoing"}>On Going</option>
               <option value={"review"}>Review</option>
               <option value={"complete"}>Complete</option>
+            </Select>
+          </div>
+          <div className="my-3 ">
+            <Label htmlFor="labelOfTask" className={`text-xl`}>
+              Category
+            </Label>
+            <Select
+              color={`white`}
+              id="labelOfTask"
+              {...register("label")}
+              className="my-2 ">
+              <option value={"research"}>Research</option>
+              <option value={"design"}>Design</option>
+              <option value={"planning"}>Planning</option>
             </Select>
           </div>
 

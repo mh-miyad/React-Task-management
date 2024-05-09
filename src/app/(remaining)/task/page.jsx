@@ -24,6 +24,7 @@ const TaskPage = () => {
                     <TaskCard
                       description={task?.description}
                       title={task?.title}
+                      label={task?.label}
                     />
                   </>
                 );

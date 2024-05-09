@@ -12,28 +12,33 @@ import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { GoArrowRight } from "react-icons/go";
 
-const TaskCard = ({ title, description }) => {
-  const [badgeTitle, setBadgeTitle] = useState("Research");
+const TaskCard = ({ title, description, label }) => {
+  console.log(label);
+
   return (
     <div className=" sm:max-w-xs 2xl:max-w-sm w-full mx-auto">
       <Card
         className={`${
-          badgeTitle === "Design"
-            ? "border-indigo-500"
-            : badgeTitle === "Research"
-            ? "border-sky-500"
-            : "border-orange-500"
+          label === "design"
+            ? "bg-indigo-500"
+            : label === "research"
+            ? "bg-sky-500"
+            : label === undefined || label === ""
+            ? "border-red-500"
+            : "border-green-500"
         }`}>
         <CardHeader>
           <Badge
             className={`${
-              badgeTitle === "Design"
-                ? "bg-indigo-500"
-                : badgeTitle === "Research"
-                ? "bg-sky-500"
-                : "bg-orange-500"
-            } py-1.5 px-5 rounded-full max-w-fit text-sm dark:text-white`}>
-            {badgeTitle || "Design"}
+              label === "design"
+                ? "bg-indigo-500 hover:bg-indigo-600"
+                : label === "research"
+                ? "bg-sky-500 hover:bg-sky-600"
+                : label === undefined || label === ""
+                ? "bg-red-500 hover:bg-red-600"
+                : "bg-green-500 hover:bg-green-600"
+            } py-1.5 px-5 rounded-full cursor-pointer max-w-fit text-sm dark:text-white capitalize`}>
+            {label || "no label"}
           </Badge>
 
           <CardTitle className="text-xl my-3 font-normal text-gray-600 dark:text-sky-100">
@@ -46,7 +51,7 @@ const TaskCard = ({ title, description }) => {
         <CardContent>
           <Badge
             className={`rounded bg-slate-50 text-slate-900 text-sm px-3 py-1`}>
-            Aug 20, 2021
+            Aug 20, 2024
           </Badge>
         </CardContent>
         <CardFooter className="flex justify-between items-center">
@@ -70,11 +75,13 @@ const TaskCard = ({ title, description }) => {
           <div>
             <button
               className={` bg-slate-100 dark:bg-black/5  text-sm px-3 py-1 rounded-md border-2 ${
-                badgeTitle === "Design"
+                label === "design"
                   ? "border-indigo-500 text-indigo-400"
-                  : badgeTitle === "Research"
+                  : label === "research"
                   ? "border-sky-500 text-sky-600"
-                  : "border-orange-500 text-orange-600"
+                  : label === undefined || label === ""
+                  ? "border-red-500 text-red-600"
+                  : "border-green-400 text-green-600"
               }`}>
               <GoArrowRight className="size-5" />
             </button>

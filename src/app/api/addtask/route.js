@@ -9,12 +9,13 @@ export const GET = async (req, res) => {
 };
 export const POST = async (req, res) => {
   await dbConfig();
-  const { titleOfTask, status, descriptionOfTask } = await req.json();
+  const { titleOfTask, status, descriptionOfTask, label } = await req.json();
 
   const taskData = new TaskModel({
     title: titleOfTask,
     description: descriptionOfTask,
     status: status,
+    label: label,
   });
 
   await taskData.save();

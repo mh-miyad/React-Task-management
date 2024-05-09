@@ -3,6 +3,7 @@ const taskSchema = new Schema({
   title: String,
   description: String,
   status: String,
+  label: String,
 });
 const TaskModel = mongoose.models?.Task || mongoose.model("Task", taskSchema);
 
