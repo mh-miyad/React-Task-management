@@ -5,6 +5,7 @@ import {
   FcConferenceCall,
   FcPaid,
   FcParallelTasks,
+  FcSerialTasks,
 } from "react-icons/fc";
 import Link from "next/link";
 
@@ -167,6 +168,31 @@ const SidebarComp = () => {
                 </h2>
               </Link>
             </li>
+            <li>
+              <Link
+                href={"/taskCreate"}
+                className={` rounded-md flex  items-center gap-2 cursor-pointer    ${
+                  pathname === "/taskCreate"
+                    ? "bg-cyan-200/20 dark:bg-cyan-400/20 border-2 border-cyan-400/20 dark:border-teal-500/30 hover:bg-cyan-300/30 hover:dark:bg-cyan-500/20  "
+                    : " dark:bg-transparent hover:bg-gray-200 hover:dark:bg-slate-800 "
+                } ${
+                  menubarOpen
+                    ? "py-1 px-5 dark:bg-cyan-400/20 border  dark:border-slate-500 hover:bg-gray-200 hover:dark:bg-slate-800 "
+                    : ""
+                }`}>
+                <FcSerialTasks className={` size-10`} />
+                <h2
+                  className={`text-sm font-medium  capitalize ${
+                    menubarOpen ? "block" : "hidden"
+                  } ${
+                    pathname === "/taskCreate"
+                      ? "text-cyan-600 dark:text-cyan-300"
+                      : "text-gray-600 dark:text-slate-400"
+                  }`}>
+                  Create Task
+                </h2>
+              </Link>
+            </li>
           </ul>
 
           {/* Navigation  */}
@@ -318,6 +344,31 @@ const SidebarComp = () => {
                           : "text-gray-600 dark:text-slate-400"
                       }`}>
                       Task Management
+                    </h2>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href={"/taskCreate"}
+                    className={` rounded-md flex  items-center gap-2 cursor-pointer    ${
+                      pathname === "/taskCreate"
+                        ? "bg-cyan-200/20 dark:bg-cyan-400/20 border-2 border-cyan-400/20 dark:border-teal-500/30 hover:bg-cyan-300/30 hover:dark:bg-cyan-500/20  "
+                        : " dark:bg-transparent hover:bg-gray-200 hover:dark:bg-slate-800 "
+                    } ${
+                      menubarOpen
+                        ? "py-1 px-5 dark:bg-cyan-400/20 border  dark:border-slate-500 hover:bg-gray-200 hover:dark:bg-slate-800 "
+                        : ""
+                    }`}>
+                    <FcSerialTasks className={` size-10`} />
+                    <h2
+                      className={`text-sm font-medium  capitalize ${
+                        menubarOpen ? "block" : "hidden"
+                      } ${
+                        pathname === "/taskCreate"
+                          ? "text-cyan-600 dark:text-cyan-300"
+                          : "text-gray-600 dark:text-slate-400"
+                      }`}>
+                      Create Task
                     </h2>
                   </Link>
                 </li>
