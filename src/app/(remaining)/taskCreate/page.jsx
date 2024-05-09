@@ -3,81 +3,60 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+
+import { Button } from "@/components/ui/button";
+import { Select } from "flowbite-react";
 
 const TaskCreatePage = () => {
   const {
     register,
     handleSubmit,
     watch,
+    reset,
     formState: { errors },
   } = useForm();
 
   const onSubmit = (data) => {
     console.log(data);
+    reset();
   };
 
   return (
-    <div className="w-[95%] mx-auto max-w-2xl container  bg-gray-100 p-5">
+    <div className="w-[95%] mx-auto max-w-2xl container  bg-gray-100 dark:bg-slate-800 p-5">
       <>
         <form onSubmit={handleSubmit(onSubmit)}>
-          {/* <div className="mb-3 ">
+          <div>
             <Label htmlFor="titleOfTask" className={`text-xl`}>
-              Title of Task{" "}
+              Title of Task
             </Label>
             <Input
+              {...register("titleOfTask", { required: true })}
               className="my-2"
-              placeholder="Title of Task"
-             {...register("titleOfTask", { required: true })}
             />
-            {errors.titleOfTask && <span>{errors.titleOfTask.message}</span>}
-          </div> */}
-          {/* <div className="mb-3 ">
-            <Label htmlFor="descriptionOfTask" className={`text-xl`}>
-              Title of Task{" "}
-            </Label>
-            <Input
-              className="my-2"
-              placeholder="Title of Task"
-              {...register("descriptionOfTask", { required: true })}
-            />
-            {errors.descriptionOfTask && (
-              <span>{errors.descriptionOfTask.message}</span>
-            )}
           </div>
-          <div className="mb-3 ">
-            <Label htmlFor="statusOfTask" className={`text-xl`}>
-              Status of Task{" "}
+          <div>
+            <Label htmlFor="descriptionOfTask" className={`text-xl`}>
+              Description of Task
             </Label>
-            <Select
-              id="statusOfTask"
-              {...register("statusOfTask", { required: true })}>
-              <SelectTrigger className="w-full my-2">
-                <SelectValue placeholder="Status of Task" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="pending">Pending</SelectItem>
-                <SelectItem value="on-going">On going</SelectItem>
-                <SelectItem value="review">Review</SelectItem>
-                <SelectItem value="done">Done</SelectItem>
-              </SelectContent>
+            <Input
+              {...register("descriptionOfTask", { required: true })}
+              className="my-2"
+            />
+          </div>
+          <div className="my-3 ">
+            <Select id="countries" {...register("status")}>
+              <option value={"pending"}>Pending</option>
+              <option value={"onGoing"}>On Going</option>
+              <option value={"review"}>Review</option>
+              <option value={"complete"}>Complete</option>
             </Select>
+          </div>
 
-            {errors.statusOfTask && <span>{errors.statusOfTask.message}</span>}
-          </div> */}
-          <input
-            type="text"
-            name="titleOfTask"
-            id="titleOfTask"
-            {...register("titleOfTask", { required: true })}
-          />
-          <input type="submit" className="bg-white p-5" />
+          <Button
+            type="submit"
+            className={`bg-cyan-500 dark:bg-cyan-600 dark:hover:bg-cyan-700 hover:bg-cyan-600  text-white`}>
+            Submit
+          </Button>
         </form>
       </>
     </div>
