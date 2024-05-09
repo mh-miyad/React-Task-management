@@ -14,7 +14,7 @@ import { GoArrowRight } from "react-icons/go";
 const TaskCard = () => {
   const [badgeTitle, setBadgeTitle] = useState("Research");
   return (
-    <div className=" max-w-sm">
+    <div className=" max-w-xs 2xl:max-w-sm w-full mx-auto">
       <Card
         className={`${
           badgeTitle === "Design"
