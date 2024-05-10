@@ -3,7 +3,7 @@ import axios from "axios";
 const UseGetData = () => {
   const baseUrl =
     process.env.NODE_ENV === "production"
-      ? "https://react-task-management-weld.vercel.app/api/addtask"
+      ? "https://react-task-management-weld.vercel.app"
       : "http://localhost:3000";
   const { isPending, error, data } = useQuery({
     queryKey: ["repoData"], // Unique identifier for your query
