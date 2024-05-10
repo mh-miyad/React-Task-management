@@ -2,8 +2,9 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 const UseGetData = () => {
   const baseUrl =
-    "https://react-task-management-weld.vercel.app/api/addtask" ||
-    "http://localhost:3000";
+    process.env.NODE_ENV === "production"
+      ? "https://react-task-management-weld.vercel.app/api/addtask"
+      : "http://localhost:3000";
   const { isPending, error, data } = useQuery({
     queryKey: ["repoData"], // Unique identifier for your query
     queryFn: async () => {
