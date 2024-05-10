@@ -1,14 +1,16 @@
+import UseGetData from "@/Hooks/UseGetData";
+import axios from "axios";
 import { create } from "zustand";
 
 const menuStore = create((set) => ({
   //  Add Here State
   menubarOpen: false,
   modal: false,
-  allTask: [],
   backlog: [],
   onGoing: [],
   done: [],
   needToDo: [],
+  id: [],
 
   //   State End Here
   //! Add Here Function
@@ -23,4 +25,4 @@ const menuStore = create((set) => ({
 
 export default menuStore;
 
-
+// ====================Task management Start here====================

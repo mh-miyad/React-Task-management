@@ -3,10 +3,12 @@ import LoadTask from "@/components/Loading/LoadTask";
 import TaskBar from "@/components/Tasks/TaskBar";
 import TaskCard from "@/components/Tasks/TaskCard";
 import UseGetData from "@/Hooks/UseGetData";
+import menuStore from "@/Provider/Zustand/Store";
 import React from "react";
 
 const TaskPage = () => {
   const { data, error, isPending } = UseGetData();
+
   return (
     <>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 items-start gap-4 px-5  ">
@@ -25,6 +27,8 @@ const TaskPage = () => {
                       description={task?.description}
                       title={task?.title}
                       label={task?.label}
+                      id={task?._id}
+                      key={task?._id}
                     />
                   </>
                 );

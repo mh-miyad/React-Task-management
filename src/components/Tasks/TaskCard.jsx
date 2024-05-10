@@ -11,10 +11,9 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { GoArrowRight } from "react-icons/go";
+import menuStore from "@/Provider/Zustand/Store";
 
-const TaskCard = ({ title, description, label }) => {
-  console.log(label);
-
+const TaskCard = ({ id, title, description, label }) => {
   return (
     <div className=" sm:max-w-xs 2xl:max-w-sm w-full mx-auto">
       <Card
@@ -82,7 +81,10 @@ const TaskCard = ({ title, description, label }) => {
                   : label === undefined || label === ""
                   ? "border-red-500 text-red-600"
                   : "border-green-400 text-green-600"
-              }`}>
+              }`}
+              onClick={() => {
+                console.log(id);
+              }}>
               <GoArrowRight className="size-5" />
             </button>
           </div>

@@ -1,6 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-
 const UseGetData = () => {
   const { isPending, error, data } = useQuery({
     queryKey: ["repoData"], // Unique identifier for your query
