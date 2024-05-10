@@ -7,8 +7,10 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { Select } from "flowbite-react";
 import axios from "axios";
+import menuStore from "@/Provider/Zustand/Store";
 
 const TaskCreatePage = () => {
+  const { sendPOSTapi, allTaskCaching } = menuStore();
   const {
     register,
     handleSubmit,
@@ -17,15 +19,9 @@ const TaskCreatePage = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = async (data) => {
-    await axios
-      .post("http://localhost:3000/api/addtask", data)
-      .then((response) => {
-        console.log(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+  const onSubmit = (data) => {
+    sendPOSTapi(data);
+
     reset();
   };
 

@@ -14,14 +14,15 @@ import { GoArrowRight } from "react-icons/go";
 import menuStore from "@/Provider/Zustand/Store";
 
 const TaskCard = ({ id, title, description, label }) => {
+  const { getId } = menuStore();
   return (
     <div className=" sm:max-w-xs 2xl:max-w-sm w-full mx-auto">
       <Card
         className={`${
           label === "design"
-            ? "bg-indigo-500"
+            ? "border-indigo-500"
             : label === "research"
-            ? "bg-sky-500"
+            ? "border-sky-500"
             : label === undefined || label === ""
             ? "border-red-500"
             : "border-green-500"
@@ -83,7 +84,7 @@ const TaskCard = ({ id, title, description, label }) => {
                   : "border-green-400 text-green-600"
               }`}
               onClick={() => {
-                console.log(id);
+                getId(id);
               }}>
               <GoArrowRight className="size-5" />
             </button>
