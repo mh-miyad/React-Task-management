@@ -1,6 +1,4 @@
-import UseGetData from "@/Hooks/UseGetData";
 import axios from "axios";
-import { all } from "axios";
 import { create } from "zustand";
 
 const menuStore = create((set) => ({
@@ -40,8 +38,8 @@ const menuStore = create((set) => ({
   //  Get From Database
   getId: (id) =>
     set((state) => {
-      const findId = state.allTaskCaching.filter((task) => task._id === id);
-      const statusOfTask = findId[0].status;
+      const findId = state?.allTaskCaching?.filter((task) => task?._id === id);
+      const statusOfTask = findId[0]?.status;
       // if (statusOfTask === "pending") {
       //   statusOfTask === "onGoing";
       // } else if (statusOfTask === "onGoing") {

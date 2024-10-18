@@ -1,5 +1,6 @@
 "use client";
-import React, { useState } from "react";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Badge } from "@/components/ui/badge";
 import {
   Card,
   CardContent,
@@ -8,10 +9,8 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { GoArrowRight } from "react-icons/go";
 import menuStore from "@/Provider/Zustand/Store";
+import { GoArrowRight } from "react-icons/go";
 
 const TaskCard = ({ id, title, description, label }) => {
   const { getId } = menuStore();
@@ -26,7 +25,8 @@ const TaskCard = ({ id, title, description, label }) => {
             : label === undefined || label === ""
             ? "border-red-500"
             : "border-green-500"
-        }`}>
+        }`}
+      >
         <CardHeader>
           <Badge
             className={`${
@@ -37,7 +37,8 @@ const TaskCard = ({ id, title, description, label }) => {
                 : label === undefined || label === ""
                 ? "bg-red-500 hover:bg-red-600"
                 : "bg-green-500 hover:bg-green-600"
-            } py-1.5 px-5 rounded-full cursor-pointer max-w-fit text-sm dark:text-white capitalize`}>
+            } py-1.5 px-5 rounded-full cursor-pointer max-w-fit text-sm dark:text-white capitalize`}
+          >
             {label || "no label"}
           </Badge>
 
@@ -50,24 +51,28 @@ const TaskCard = ({ id, title, description, label }) => {
         </CardHeader>
         <CardContent>
           <Badge
-            className={`rounded bg-slate-50 text-slate-900 text-sm px-3 py-1`}>
+            className={`rounded bg-slate-50 text-slate-900 text-sm px-3 py-1`}
+          >
             Aug 20, 2024
           </Badge>
         </CardContent>
         <CardFooter className="flex justify-between items-center">
           <div className="flex items-center  ">
             <Avatar
-              className={`-ml-2.5  dark:ring-white size-8 cursor-pointer hover:scale-110 transition-all duration-100 ease-linear`}>
+              className={`-ml-2.5  dark:ring-white size-8 cursor-pointer hover:scale-110 transition-all duration-100 ease-linear`}
+            >
               <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
               <AvatarFallback>CN</AvatarFallback>
             </Avatar>
             <Avatar
-              className={`-ml-2.5  dark:ring-white size-8 cursor-pointer hover:scale-110 transition-all duration-100 ease-linear`}>
+              className={`-ml-2.5  dark:ring-white size-8 cursor-pointer hover:scale-110 transition-all duration-100 ease-linear`}
+            >
               <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
               <AvatarFallback>CN</AvatarFallback>
             </Avatar>
             <Avatar
-              className={`-ml-2.5  dark:ring-white size-8 cursor-pointer hover:scale-110 transition-all duration-100 ease-linear`}>
+              className={`-ml-2.5  dark:ring-white size-8 cursor-pointer hover:scale-110 transition-all duration-100 ease-linear`}
+            >
               <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
               <AvatarFallback>CN</AvatarFallback>
             </Avatar>
@@ -83,9 +88,8 @@ const TaskCard = ({ id, title, description, label }) => {
                   ? "border-red-500 text-red-600"
                   : "border-green-400 text-green-600"
               }`}
-              onClick={() => {
-                getId(id);
-              }}>
+              onClick={() => getId(id)}
+            >
               <GoArrowRight className="size-5" />
             </button>
           </div>
